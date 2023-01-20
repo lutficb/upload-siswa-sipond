@@ -20,7 +20,20 @@ class Siswa extends BaseController
     public function uploadFile()
     {
         $file = $this->request->getFile('file');
-        dd($file);
         $extension = $file->getClientExtension();
+
+        if ($extension == 'xls' || $extension == 'xlsx' || $extension == 'ods') {
+            if ($extension == 'xls') {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+            } else if ($extension == 'xlsx') {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+            } else {
+                $reader = new \PhpOffice\PhpSpreadsheet\Reader\Ods();
+            }
+
+            $spreadsheet = $reader->load($file);
+        } else {
+            return redirect()->back()->with('error', 'File harus berekstensi .xls, .xlsx, atau .ods');
+        }
     }
 }
