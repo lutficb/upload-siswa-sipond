@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Siswa extends Model
+class SiswaModel extends Model
 {
     // protected $DBGroup          = 'default';
     protected $table            = 'siswa';
     protected $primaryKey       = 'nis';
-    protected $useAutoIncrement = true;
+    // protected $useAutoIncrement = true;
     // protected $insertID         = 0;
     protected $returnType       = 'array';
     // protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = ['akte'];
+    // protected $protectFields    = true;
+    protected $allowedFields    = ['nis', 'namasiswa', 'kotalahir', 'tanggallahir', 'jeniskelamin', 'anakke', 'bersaudara', 'marhalah', 'kelas', 'spp', 'nokk', 'ttlayah', 'noktpayah', 'pendidikanayah', 'gajiayah', 'namaayah', 'pekerjaanayah', 'ttlibu', 'noktpibu', 'pendidikanibu', 'gajiibu', 'namaibu', 'pekerjaanibu', 'alamat', 'kelurahan', 'kecamatan', 'alamatkota', 'provinsi', 'telephon', 'asalsekolah', 'nisn', 'uangpangkal', 'lulus', 'nokartu', 'nik'];
 
     // // Dates
     // protected $useTimestamps = false;
